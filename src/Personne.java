@@ -1,4 +1,4 @@
-public class Personne {
+public class Personne implements Comparable<Personne>{
     private int id;
     private String nom,prenom;
     private int age;
@@ -54,4 +54,12 @@ public class Personne {
                 '}';
     }
 
+    @Override
+    public int compareTo(Personne p) {
+        if(id>p.id)
+            return 1;
+        else if(id<p.id)
+            return -1;
+        return 0;
+    }
 }
